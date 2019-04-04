@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "EventSource",
+  "title": "Event Source Options Schema",
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "format": "path",
+      "default": "src/app/data/repository",
+      "description": "The path to create the component.",
+      "visible": false
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the service.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "spec": {
+      "type": "boolean",
+      "description": "Specifies if a spec file is generated.",
+      "default": true
+    },
+    "module": {
+      "type": "string",
+      "description": "Allows specification of the declaring module.",
+      "alias": "m"
+    },
+    "provider": {
+      "type": "boolean",
+      "default": false,
+      "description": "Specifies if declaring module exports the component."
+    },
+    "url": {
+      "type": "string",
+      "default": "''",
+      "description": "Data Repository URL"
+    },
+    "skipImport": {
+      "type": "boolean",
+      "default": true,
+      "description": "Skip import"
+    }
+  }
+}

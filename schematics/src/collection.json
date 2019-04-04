@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "domain": {
+      "description": "Create Clean Domain",
+      "factory": "./domain/index#DomainSchematic",
+      "schema": "./domain/schema.json",
+      "aliases": ["d"]
+    }
+  }
+}
