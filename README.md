@@ -51,6 +51,12 @@ npm link schematics
 ng g schematics:domain --name phodal
 ```
 
+## 相似项目
+
+ - [Angular Clean Architecture](https://github.com/im-a-giraffe/angular-clean-architecture)
+ - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
+ - [Google Android MVP Clean](https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/)
+
 License
 ---
 
