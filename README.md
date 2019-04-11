@@ -99,6 +99,17 @@ Android Clean Architecture
  - **Domain**: Holds all business logic. The domain layer starts with classes named _use cases_ or _interactors_ used by the application presenters. These _use cases_ represent all the possible actions a developer can perform from the presentation layer.
  - **Repository**: Repository pattern from the base sample.
 
+## 结构
+
+来源： [https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where](https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where)
+
+*   app/**shared** - This is the module where I keep small stuff that every other module will need. I have 3 submodules there `directives`, `components` and `pipes`, just to keep things organized a little better. Examples: `filesize.pipe`, `click-outside.directive`, `offline-status.component`...
+*   app/**public** - In this module I keep public routes and top-level components. Examples: `about.component`, `contact.component`, `app-toolbar.component`
+*   app/**core** - Services that app needs (and cannot work without) go here. Examples: `ui.service`, `auth.service`, `auth.guard`, `data.service`, `workers.service`....
+*   app/**protected** - Similar to **public**, only for authorized users. This module has protected routes and top-level components. Examples: `user-profile.component`, `dashboard.component`, `dashboard-sidebar.component`...
+*   app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
+*   app/**dev** - I use this module when developing, don't ship it in production.
+
 ## Schematics 生成
 
 ```

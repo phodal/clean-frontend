@@ -1,4 +1,4 @@
-import { ElephantModel } from '../../../core/domain/elephant.model';
+import { ElephantModel } from '../model/elephant.model';
 import { Observable } from 'rxjs';
 
 export abstract class ElephantRepository {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllElephantsUsecase } from '../../usecases/elephants/get-all-elephants.usecase';
-import { ElephantModel } from '../../core/domain/elephant.model';
+import { GetAllElephantsUsecase } from '../../domain/elephant/usecases/get-all-elephants.usecase';
+import { ElephantModel } from '../../domain/elephant/model/elephant.model';
 
 @Component({
   selector: 'app-home',
