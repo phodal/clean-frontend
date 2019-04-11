@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-import { <%= classify(name) %>Model } from '../../../core/domain/<%= name %>.model';
+import { <%= classify(name) %>Model } from '../model/<%= name %>.model';
 import { <%= classify(name) %>RepositoryMapper } from './<%= name %>-repository-mapper';
 import { <%= classify(name) %>Entity } from './<%= classify(name) %>-entity';
 

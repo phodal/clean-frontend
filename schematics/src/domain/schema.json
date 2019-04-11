@@ -7,7 +7,7 @@
     "path": {
       "type": "string",
       "format": "path",
-      "default": "src/app/data/repository",
+      "default": "src/app/domain",
       "description": "The path to create the component.",
       "visible": false
     },
