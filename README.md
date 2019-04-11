@@ -1,8 +1,6 @@
-# CleanAngular
+# Clean Angular
 
 ![Clean Architecture](docs/images/clean-architecture.jpg)
-
-目标：
 
  1. **框架无关性**。干净架构不依赖于具体的框架和库，而仅把它们当作工具，因此不会受限于任何具体的框架和库。
  2. **可测试性**。业务规则可以在没有 UI、数据库、Web 服务器等外部依赖的情况下进行测试。
@@ -10,6 +8,10 @@
  4. **数据库无关性**。可以很容易地切换数据库类型，比如从关系型数据库 MySQL 切换到文档型数据库 MongoDB，因为业务规则并没有绑定到某种特定的数据库类型。
  5. **外部代理无关性**。业务规则对外部世界一无所知，因此外部代理的变动不会影响到业务代码。
 
+基于 [Angular Clean Architecture](https://github.com/im-a-giraffe/angular-clean-architecture)，添加了：
+
+ - **Schematics**，用于自动生成 entity, repository, entity
+ - 常规 Angular 项目的结构 **shared**、路由懒加载
 
 ## 目录
 
@@ -26,6 +28,27 @@ cmf-web-starter/
  │   │   └──presentation/          * 表现层。放置生成的组件，MVP则表现在展示层，P层通过获取到Data层的用例数据流出，从而改变UI。
  │   │         └──home          * 首页模块
  │   ...
+```
+
+Data 层示例：
+
+```
+└── elephant-web-repository
+    ├── elephant-web-entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
+    ├── elephant-web-repository-mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
+    ├── elephant-web.repository.ts                // Repository，用于读取和存储数据。
+    └── usecases
+        └── get-elephant-by-id-usecase.usecase.ts // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
+```
+
+Core 层示例：
+
+```
+├── base
+│   ├── mapper.ts                                 // Mapper interface
+│   └── use-case.ts                               // Usecase interface
+└── domain
+    └── elephant.model.ts                         // 核心业务模型
 ```
 
 ## 核心原则 
@@ -69,7 +92,12 @@ npm link schematics
 ng g schematics:domain --name phodal
 ```
 
-## 相似项目
+## 相关文章
+
+ - [Approach to Clean Architecture in Angular Applications — Theory](https://medium.com/@thegiraffeclub/angular-clean-architecture-approach-fcfe32e983a5)
+ - [Approach to Clean Architecture in Angular Applications — Hands-on](https://medium.com/intive-developers/approach-to-clean-architecture-in-angular-applications-hands-on-35145ceadc98)
+
+### 相似项目
 
  - [Angular Clean Architecture](https://github.com/im-a-giraffe/angular-clean-architecture)
  - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
