@@ -53,6 +53,8 @@ Core 层示例：
 
 ## 核心原则
 
+来源： **[The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)**
+
 ### 向内依赖原则（Inward Dependency Rule）
 
 干净架构最核心的原则就是代码依赖关系只能从外向内，而不能反之。干净架构的每一圈层代表软件系统的不同部分，越往里抽象程度越高。外层为机制，内层为策略。这里说的依赖关系，具体指的是内层代码不能引用外层代码的命名软件实体，包括类、方法、函数和数据类型等。
