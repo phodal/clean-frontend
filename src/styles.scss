@@ -1,4 +1,5 @@
-@import '~@angular/material/theming';
+@import '../node_modules/@angular/material/theming';
+
 @import '~normalize.css/normalize.css';
 @import 'app-theme';
 @import './app/shared/components/navbar/navbar-theme';
