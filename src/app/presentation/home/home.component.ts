@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllElephantsUsecase } from '../../data/repository/elephant-web-repository/usecases/get-all-elephants.usecase';
+import { GetAllElephantsUsecase } from '../../usecases/elephants/get-all-elephants.usecase';
 import { ElephantModel } from '../../core/domain/elephant.model';
 
 @Component({
