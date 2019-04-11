@@ -51,7 +51,7 @@ Core 层示例：
     └── elephant.model.ts                         // 核心业务模型
 ```
 
-## 核心原则 
+## 核心原则
 
 ### 向内依赖原则（Inward Dependency Rule）
 
@@ -73,7 +73,19 @@ Core 层示例：
 
 最外层由各种框架和工具组成，比如 Web 框架、数据库访问工具等。通常在这层不需要写太多代码，大多是一些用来跟内层通信的胶水代码。这一层包含了所有实现细节，把实现细节锁定在这一层能够减少它们的改动对整个系统造成的伤害。
 
-## 相似
+## 数据流
+
+源自： [https://github.com/android10/Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
+
+### Architectural approach
+
+![Architectural approach](docs/images/clean_architecture_layers.png)
+
+### Architectural reactive approach
+
+![数据流细节](docs/images/clean_architecture_layers_details.png) 
+
+## 相似项目
 
 Android Clean Architecture
 
@@ -85,7 +97,7 @@ Android Clean Architecture
  - **Domain**: Holds all business logic. The domain layer starts with classes named _use cases_ or _interactors_ used by the application presenters. These _use cases_ represent all the possible actions a developer can perform from the presentation layer.
  - **Repository**: Repository pattern from the base sample.
 
-## Schematics
+## Schematics 生成
 
 ```
 npm link schematics
@@ -102,6 +114,7 @@ ng g schematics:domain --name phodal
  - [Angular Clean Architecture](https://github.com/im-a-giraffe/angular-clean-architecture)
  - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
  - [Google Android MVP Clean](https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/)
+ - [Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture) 13k stars
 
 License
 ---
