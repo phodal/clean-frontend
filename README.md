@@ -17,38 +17,31 @@
 
 ```
 cmf-web-starter/
- ├──schematics/                    * 用于生成 data 层的代码
- ├──src/                           * 应用源代码
+ ├──schematics/                    // 用于生成 data 层的代码
+ ├──src/                           // 应用源代码
  |   ...
- │   ├──app/                       * 应用文件夹
+ │   ├──app/                       // 应用文件夹
  │   │   ├──...
- │   │   ├──core/                  * 核心领域/业务层，放置 TypeScript 定义的 Model 
- │   │   ├──data/                  * 数据层，则用来存放具体的业务数据类型，网络(本地)数据获取，以及将业务数据转换为应用展示所需的数据模型
- │   │   ├──shared/                * 可以被特性模块共享的组件
- │   │   └──presentation/          * 表现层。放置生成的组件，MVP则表现在展示层，P层通过获取到Data层的用例数据流出，从而改变UI。
- │   │         └──home          * 首页模块
+ │   │   ├──core/                  // 核心代码，包含基本服务和基础代码
+ │   │   ├──domain/                // 业务层代码，包含每个业务的单独 Clean 架构内容  
+ │   │   ├──features/              // 公共页面组件
+ │   │   ├──public/                // 公共页面
+ │   │   ├──protected/             // 有权限的页面
+ │   │   └──shared/                // 共享目录
  │   ...
 ```
 
-Data 层示例：
+Domain 示例（Clean Architecture）：
 
-```
-└── elephant-web-repository
-    ├── elephant-web-entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
-    ├── elephant-web-repository-mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
-    ├── elephant-web.repository.ts                // Repository，用于读取和存储数据。
-    └── usecases
-        └── get-elephant-by-id-usecase.usecase.ts // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
-```
-
-Core 层示例：
-
-```
-├── base
-│   ├── mapper.ts                                 // Mapper interface
-│   └── use-case.ts                               // Usecase interface
-└── domain
-    └── elephant.model.ts                         // 核心业务模型
+```bash
+├── model
+│   └── elephant.model.ts                         // 核心业务模型
+├── repository
+│   ├── elephant-web-entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
+│   ├── elephant-web-repository-mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
+│   └── elephant-web.repository.ts                // Repository，用于读取和存储数据。
+└── usecases
+    └── get-elephant-by-id-usecase.usecase.ts     // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
 ```
 
 ## 核心原则
@@ -99,17 +92,6 @@ Android Clean Architecture
  - **Domain**: Holds all business logic. The domain layer starts with classes named _use cases_ or _interactors_ used by the application presenters. These _use cases_ represent all the possible actions a developer can perform from the presentation layer.
  - **Repository**: Repository pattern from the base sample.
 
-## 结构
-
-来源： [https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where](https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where)
-
-*   app/**shared** - This is the module where I keep small stuff that every other module will need. I have 3 submodules there `directives`, `components` and `pipes`, just to keep things organized a little better. Examples: `filesize.pipe`, `click-outside.directive`, `offline-status.component`...
-*   app/**public** - In this module I keep public routes and top-level components. Examples: `about.component`, `contact.component`, `app-toolbar.component`
-*   app/**core** - Services that app needs (and cannot work without) go here. Examples: `ui.service`, `auth.service`, `auth.guard`, `data.service`, `workers.service`....
-*   app/**protected** - Similar to **public**, only for authorized users. This module has protected routes and top-level components. Examples: `user-profile.component`, `dashboard.component`, `dashboard-sidebar.component`...
-*   app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
-*   app/**dev** - I use this module when developing, don't ship it in production.
-
 ## Schematics 生成
 
 ```
@@ -117,12 +99,25 @@ npm link schematics
 ng g schematics:domain --name phodal
 ```
 
-## 相关文章
+## 相关
+
+### 相关文章
 
  - [Thoughts on Clean Architecture and MVP](http://wahibhaq.com/blog/clean-architecture-mvp-summary/)
  - [Approach to Clean Architecture in Angular Applications — Theory](https://medium.com/@thegiraffeclub/angular-clean-architecture-approach-fcfe32e983a5)
  - [Approach to Clean Architecture in Angular Applications — Hands-on](https://medium.com/intive-developers/approach-to-clean-architecture-in-angular-applications-hands-on-35145ceadc98)
  - [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
+
+### 目录结构
+
+来源： [https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where](https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where)
+
+ - app/**shared** - This is the module where I keep small stuff that every other module will need. I have 3 submodules there `directives`, `components` and `pipes`, just to keep things organized a little better. Examples: `filesize.pipe`, `click-outside.directive`, `offline-status.component`...
+ - app/**public** - In this module I keep public routes and top-level components. Examples: `about.component`, `contact.component`, `app-toolbar.component`
+ - app/**core** - Services that app needs (and cannot work without) go here. Examples: `ui.service`, `auth.service`, `auth.guard`, `data.service`, `workers.service`....
+ - app/**protected** - Similar to **public**, only for authorized users. This module has protected routes and top-level components. Examples: `user-profile.component`, `dashboard.component`, `dashboard-sidebar.component`...
+ - app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
+ - app/**dev** - I use this module when developing, don't ship it in production.
 
 ### 相似项目
 
