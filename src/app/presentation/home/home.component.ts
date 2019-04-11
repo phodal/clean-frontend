@@ -8,7 +8,7 @@ import { ElephantModel } from '../../core/domain/elephant.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private elephants: any[];
+  elephants: any[];
 
   constructor(private getAllElephants: GetAllElephantsUsecase) {
   }
