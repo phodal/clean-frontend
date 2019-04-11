@@ -2,24 +2,28 @@
   "name": "clean-angular",
   "version": "0.0.0",
   "scripts": {
+    "build-themes": "bash ./tools/build-themes.sh",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "start": "npm run build-themes && ng serve",
+    "build": "npm run build-themes && ng build",
+    "test": "npm run build-themes && ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "npm run build-themes && ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.2.0",
+    "@angular/animations": "^7.2.12",
+    "@angular/cdk": "^7.3.7",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/core": "~7.2.0",
     "@angular/forms": "~7.2.0",
+    "@angular/material": "^7.3.7",
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "normalize.css": "^8.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

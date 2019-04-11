@@ -3,24 +3,32 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NavBarModule } from './components/navbar/navbar.module';
+import { ThemePickerModule } from './utils/theme-picker';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    ThemePickerModule,
+    MatButtonModule,
+    NavBarModule,
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  declarations: [],
   providers: [
   ],
   exports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThemePickerModule,
+    NavBarModule,
   ],
-  entryComponents: []
+  entryComponents: [
+  ]
 })
 export class SharedModule {
 }

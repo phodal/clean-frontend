@@ -27,7 +27,27 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/assets/pink-bluegrey.css",
+                "lazy": true,
+                "bundleName": "pink-bluegrey"
+              },
+              {
+                "input": "src/assets/deeppurple-amber.css",
+                "lazy": true,
+                "bundleName": "deeppurple-amber"
+              },
+              {
+                "input": "src/assets/indigo-pink.css",
+                "lazy": true,
+                "bundleName": "indigo-pink"
+              },
+              {
+                "input": "src/assets/purple-green.css",
+                "lazy": true,
+                "bundleName": "purple-green"
+              }
             ],
             "scripts": [],
             "es5BrowserSupport": true

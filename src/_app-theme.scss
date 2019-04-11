@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+
+@import './app/public/home/home-theme';
+@import './app/shared/components/navbar/navbar-theme';
+
+@mixin app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $next-theme: mat-palette($mat-red);
+
+  .app-background {
+    background: mat-color($background, background);
+  }
+
+  .primary-header {
+    background: mat-color($primary);
+
+    h1 {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  .footer {
+    background: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+  }
+
+  @include nav-bar-theme($theme);
+}
