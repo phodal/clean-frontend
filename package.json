@@ -2,7 +2,7 @@
   "name": "clean-angular",
   "version": "0.0.0",
   "scripts": {
-    "build-themes": "bash ./tools/build-themes.sh",
+    "build-themes": "bash scripts/tools/build-themes.sh",
     "ng": "ng",
     "start": "npm run build-themes && ng serve",
     "build": "npm run build-themes && ng build",

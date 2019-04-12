@@ -4,7 +4,7 @@ const path = require("path");
 const execa = require("execa");
 const fs = require("fs");
 
-const tools = path.resolve("tools");
+const tools = path.resolve("scripts/tools");
 const docs = path.resolve("docs");
 const readme = path.resolve(docs, "README.md");
 
