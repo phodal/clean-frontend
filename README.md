@@ -101,6 +101,10 @@ ng g schematics:domain --name phodal
 
 ## 相关
 
+### MVP 架构
+
+ - [Model-View-Presenter with Angular](https://blog.angularindepth.com/model-view-presenter-with-angular-3a4dbffe49bb)
+
 ### 相关文章
 
  - [Thoughts on Clean Architecture and MVP](http://wahibhaq.com/blog/clean-architecture-mvp-summary/)
