@@ -33,7 +33,7 @@ cmf-web-starter/
 
 Domain 示例（Clean Architecture）：
 
-```bash
+```
 ├── model
 │   └── elephant.model.ts                         // 核心业务模型
 ├── repository
