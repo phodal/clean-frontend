@@ -8,7 +8,8 @@
     "build": "npm run build-themes && ng build",
     "test": "npm run build-themes && ng test",
     "lint": "ng lint",
-    "e2e": "npm run build-themes && ng e2e"
+    "e2e": "npm run build-themes && ng e2e",
+    "update:docs": "node scripts/toc.js"
   },
   "private": true,
   "dependencies": {
