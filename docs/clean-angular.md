@@ -59,19 +59,19 @@ Clean Architecture
 OO 设计：SOLID
 ===
 
-▸ S - Single Responsibility Principle
-▸ O - Open/Closed Principle
-▸ L - Liskov Substitution Principle
-▸ I - Interface Segregation Principle
-▸ D - Dependency Inversion Principle
+ -  S - Single Responsibility Principle
+ -  O - Open/Closed Principle
+ -  L - Liskov Substitution Principle
+ -  I - Interface Segregation Principle
+ -  D - Dependency Inversion Principle
 
 依赖倒置原则 
 ===
 
-▸ High-level modules should not depend on low-level
+ -  High-level modules should not depend on low-level
 modules. Both should depend on abstractions.
 
-▸ Abstractions should not depend on details. Details should
+ -  Abstractions should not depend on details. Details should
 depend on abstractions.
 
 Clean Architecture
@@ -82,11 +82,11 @@ Clean Architecture
 核心概念
 ===
 
-▸ Entities (Enterprise wide Business Rules or Business
+ -  Entities (Enterprise wide Business Rules or Business
 Objects of a Single Application)
-▸ Use Cases (Application Specific Business Rules)
-▸ Interface Adapters (Presenters, Controllers, Gateways, etc)
-▸ Frameworks and Drivers (Android Framework, Web, etc)
+ -  Use Cases (Application Specific Business Rules)
+ -  Interface Adapters (Presenters, Controllers, Gateways, etc)
+ -  Frameworks and Drivers (Android Framework, Web, etc)
 
 Clean Architecture 实现
 ===
@@ -101,24 +101,23 @@ Clean Architecture 实现
 优点
 ===
 
-▸ One level of breakdown for testability
-▸ Easier to implement functionalities like caching, storage, etc.
-▸ Reusable Usecases
-▸ Defining where to add code for specific functionality
-▸ Multiple projects can share domain/business logic
-▸ Implement different presentation patterns like MVVM, MVI,
+ -  One level of breakdown for testability
+ -  Easier to implement functionalities like caching, storage, etc.
+ -  Reusable Usecases
+ -  Defining where to add code for specific functionality
+ -  Multiple projects can share domain/business logic
+ -  Implement different presentation patterns like MVVM, MVI,
 etc.
 
 缺点
 ===
 
-▸ Dependent on RxJava
-▸ Boilerplate code
-▸ UseCaseExecutor takes away several RxJava benefits
-▸ Request and Response Models in UseCase
-▸ Steep learning curve
-▸ Over-Engineering, perhaps?
-
+ -  Dependent on RxJava
+ -  Boilerplate code
+ -  UseCaseExecutor takes away several RxJava benefits
+ -  Request and Response Models in UseCase
+ -  Steep learning curve
+ -  Over-Engineering, perhaps?
 
 Presentation-Domain-Data-Layering
 ===
@@ -149,3 +148,6 @@ Angular
 └── usecases
     └── get-elephant-by-id-usecase.usecase.ts     // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
 ```
+
+TBC
+===
