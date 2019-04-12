@@ -22,19 +22,16 @@ Vue is not Clean
 ===
 
 
-Angular MVP
+Angular 组件
 ===
 
-Container   | Integrates with other application layers
-Component   |
+| Component |  说明                 |               
+|-------------------|----------------------|
+| Container <br/> Component | Integrates with other application layers |
+| Presentational <br/> Component | Pure presentational, interactive view, Thin component model |
+| Presenter   | Complex presentational Logic |
 
-Presentational | Pure presentational, interactive view,
-Component       | Thin component model
-
-Presenter   | Complex
-            | presentational LOGIC
-
-Data Flow
+数据流
 ===
 
 ![Data Flow](images/event-data-flow.gif)
@@ -42,37 +39,34 @@ Data Flow
 Presenter
 ===
 
- - Presentation
- - State Management
- - Business Logic
- - Persistence
+ - 展示（presentation）
+ - 状态管理（state management）
+ - 业务逻辑（business logic）
+ - 持久化（persistence）
  
 Clean Architecture
 ===
 
- - Independence from Framework
- - Testable
- - Independent of UI
- - Independent of Database
- - Independent of any external agents (Security, scheduling, etc)
+ - 框架无关性
+ - 可测试
+ - UI 无关性
+ - 数据库无关性
+ - 外部代理无关性（安全、调度、代理）
 
 OO 设计：SOLID
 ===
 
- -  S - Single Responsibility Principle
- -  O - Open/Closed Principle
- -  L - Liskov Substitution Principle
- -  I - Interface Segregation Principle
- -  D - Dependency Inversion Principle
+ -  S - 单一责任原则（Single Responsibility Principle）
+ -  O - 开放封闭原则（Open/Closed Principle）
+ -  L - 里氏替换原则（Liskov Substitution Principle）
+ -  I - 接口分离原则（Interface Segregation Principle）
+ -  D - 依赖倒置原则（Dependency Inversion Principle）
 
 依赖倒置原则 
 ===
 
- -  High-level modules should not depend on low-level
-modules. Both should depend on abstractions.
-
- -  Abstractions should not depend on details. Details should
-depend on abstractions.
+ - 高层模块不应该依赖低层模块，两者都应该依赖其抽象
+ - 抽象不应该依赖细节，细节应该依赖抽象
 
 Clean Architecture
 ===
@@ -82,16 +76,26 @@ Clean Architecture
 核心概念
 ===
 
- -  Entities (Enterprise wide Business Rules or Business
-Objects of a Single Application)
- -  Use Cases (Application Specific Business Rules)
- -  Interface Adapters (Presenters, Controllers, Gateways, etc)
- -  Frameworks and Drivers (Android Framework, Web, etc)
+ - 实体 Entities （又称领域对象或业务对象，实体用于封装企业范围的业务规则）
+ - 用例 Use Cases（交互器，用例是特定于应用的业务逻辑）
+ - 接口适配器 Interface Adapters （接口适配器层的主要作用是转换数据）
+ - 框架和驱动（Frameworks and Drivers），最外层由各种框架和工具组成，比如 Web 框架、数据库访问工具等
 
-Clean Architecture 实现
+Use case（交互器）
+===
+
+![Use Case](images/angular-clean-usecase.png)
+
+Clean Architecture 架构
 ===
 
 ![Clean Architecture 实现](images/android-mvp-clean.png)
+
+
+Clean Architecture 流控制
+===
+
+![流](images/usecase-flow.png)
 
 数据流
 ===
@@ -132,8 +136,6 @@ Presentation-Domain-Data-Layering
 分层是一种反模式
 
 ![All Top](images/all_top.png)
-
-===
 
 Angular
 ===
