@@ -105,23 +105,17 @@ Clean Architecture 流控制
 优点
 ===
 
- -  One level of breakdown for testability
- -  Easier to implement functionalities like caching, storage, etc.
- -  Reusable Usecases
- -  Defining where to add code for specific functionality
- -  Multiple projects can share domain/business logic
- -  Implement different presentation patterns like MVVM, MVI,
-etc.
+ - 可重用的 Usecases
+ - 定义了特定功能的代码放在何处
+ - 可以在多个项目共享业务逻辑
 
 缺点
 ===
 
- -  Dependent on RxJava
- -  Boilerplate code
- -  UseCaseExecutor takes away several RxJava benefits
- -  Request and Response Models in UseCase
- -  Steep learning curve
- -  Over-Engineering, perhaps?
+ - 过度设计
+ - 大量的模板式代码
+ - 重复的数据模型
+ - 陡峭的学习曲线
 
 Presentation-Domain-Data-Layering
 ===

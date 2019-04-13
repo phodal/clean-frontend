@@ -129,7 +129,9 @@ ng g schematics:domain --name phodal
  - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
  - [Google Android MVP Clean](https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/)
  - [Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture) 13k stars
-
+ - [Theatre: Clean Architecture + MVVM + Reactive Extensions + Android Architecture Components](https://github.com/andremion/Theatre)
+ - [Android Clean Boilerplate](https://github.com/dmilicic/Android-Clean-Boilerplate/tree/example)
+ 
 License
 ---
 
