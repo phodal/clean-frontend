@@ -1,12 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    body { font-family: 'Droid Serif'; }
+    h1, h2, h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: normal;
+    }
+    img {
+      width: auto;
+      height: 100%;
+    }
+    .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+  </style>
+</head>
+<body>
+<textarea id="source">
+
+class: center, middle
+
 # Clean Angular in Angular
 
-Phodal
+  Phodal HUANG
 
-# AVR is evil
+---
+
+# 前端框架绑定
+
+ - React
+ - Angular
+ - Vue
+
+---
 
 # 数据流
 
 ![Data Flow](images/event-data-flow.gif)
+
+---
 
 # Presenter 职责
 
@@ -14,6 +51,8 @@ Phodal
  - 状态管理（state management）
  - 业务逻辑（business logic）
  - 数据持久化（persistence）
+
+---
 
 # Clean Architecture 理念
 
@@ -23,9 +62,13 @@ Phodal
  - 数据库无关性
  - 外部代理无关性（安全、调度、代理）
 
+---
+
 # 架构图
 
 ![Clean Architecture](images/clean-architecture.jpg)
+
+---
 
 # OO 设计：SOLID
 
@@ -35,10 +78,14 @@ Phodal
  -  I - 接口分离原则（Interface Segregation Principle）
  -  D - 依赖倒置原则（Dependency Inversion Principle）
 
+---
+
 # 依赖倒置原则
 
  - 高层模块不应该依赖低层模块，两者都应该依赖其抽象
  - 抽象不应该依赖细节，细节应该依赖抽象
+
+---
 
 # 核心概念
 
@@ -47,27 +94,39 @@ Phodal
  - 接口适配器 Interface Adapters （接口适配器层的主要作用是转换数据）
  - 框架和驱动（Frameworks and Drivers），最外层由各种框架和工具组成，比如 Web 框架、数据库访问工具等
 
+---
+
 # Use case（交互器）
 
 ![Use Case](images/angular-clean-usecase.png)
+
+---
 
 # Android MVP + Clean Architecture
 
 ![Clean Architecture 实现](images/android-mvp-clean.png)
 
+---
+
 # Clean Architecture 流控制
 
 ![流](images/usecase-flow.png)
 
+---
+
 # 数据流
 
 ![数据流](images/clean_architecture_layers_details.png)
+
+---
 
 # 优点
 
  - 可重用的 Usecases
  - 定义了特定功能的代码放在何处
  - 可以在多个项目共享业务逻辑
+
+---
 
 # 缺点
 
@@ -76,19 +135,27 @@ Phodal
  - 大量的模板式代码
  - 陡峭的学习曲线
 
+---
+
 # Presentation Domain Data Layering
 
 [PresentationDomainDataLayering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
 
 ![Presentation-Domain-Data-Layering](images/Presentation-Domain-Data-Layering.png)
 
+---
+
 # 纵向分层
 
 ![All Top](images/all_top.png)
 
+---
+
 # Clean Frontend
 
 ![Clean MVP 组件化](images/clean-frontend-architecture.jpg)
+
+---
 
 # Angular 目录结构
 
@@ -101,6 +168,8 @@ Phodal
 ├── public				// 公共页面
 └── shared				// 共享目录
 ```
+
+---
 
 # Data 层
 
@@ -115,4 +184,17 @@ Phodal
     └── get-elephant-by-id-usecase.usecase.ts     // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
 ```
 
+---
+
 # Thank you
+
+---
+
+    </textarea>
+<script src="./remark-latest.min.js">
+</script>
+<script>
+  var slideshow = remark.create();
+</script>
+</body>
+</html>
