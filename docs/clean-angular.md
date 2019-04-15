@@ -6,43 +6,18 @@ Phodal
 AVR is evil
 ===
 
-Angular is not Clean
-
-![Angular Code Demo](images/angular-demo-code.png)
-
-React is not Clean
-
-![React Code Demo](images/react-demo-code.png)
-
-Vue is not Clean
-
-![Vue Code Demo](images/vue-demo-code.png)
-
-框架 x 独立
-===
-
-
-Angular 组件
-===
-
-| Component |  说明                 |               
-|-------------------|----------------------|
-| Container <br/> Component | Integrates with other application layers |
-| Presentational <br/> Component | Pure presentational, interactive view, Thin component model |
-| Presenter   | Complex presentational Logic |
-
 数据流
 ===
 
 ![Data Flow](images/event-data-flow.gif)
 
-Presenter
+Presenter 职责
 ===
 
  - 展示（presentation）
  - 状态管理（state management）
  - 业务逻辑（business logic）
- - 持久化（persistence）
+ - 数据持久化（persistence）
  
 Clean Architecture
 ===
@@ -52,6 +27,11 @@ Clean Architecture
  - UI 无关性
  - 数据库无关性
  - 外部代理无关性（安全、调度、代理）
+
+Clean Architecture
+===
+
+![Clean Architecture](images/clean-architecture.jpg)
 
 OO 设计：SOLID
 ===
@@ -67,11 +47,6 @@ OO 设计：SOLID
 
  - 高层模块不应该依赖低层模块，两者都应该依赖其抽象
  - 抽象不应该依赖细节，细节应该依赖抽象
-
-Clean Architecture
-===
-
-![Clean Architecture](images/clean-architecture.jpg)
 
 核心概念
 ===
@@ -90,7 +65,6 @@ Clean Architecture 架构
 ===
 
 ![Clean Architecture 实现](images/android-mvp-clean.png)
-
 
 Clean Architecture 流控制
 ===
@@ -113,11 +87,11 @@ Clean Architecture 流控制
 ===
 
  - 过度设计
+ - 过于复杂
  - 大量的模板式代码
- - 重复的数据模型
  - 陡峭的学习曲线
 
-Presentation-Domain-Data-Layering
+Presentation Domain Data Layering
 ===
 
 [PresentationDomainDataLayering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
@@ -127,11 +101,27 @@ Presentation-Domain-Data-Layering
 纵向分层
 ===
 
-分层是一种反模式
-
 ![All Top](images/all_top.png)
 
-Angular
+Clean Frontend
+===
+
+![Clean MVP 组件化](images/clean-frontend-architecture.jpg)
+
+Angular 目录
+===
+
+```
+├── core			    // 核心代码，包含基本服务和基础代码
+├── domain				// 业务层代码，包含每个业务的单独 Clean 架构内容
+│   └── elephant		// 某一具体的业务
+├── features			// 公共页面组件
+├── protected			// 有权限的页面
+├── public				// 公共页面
+└── shared				// 共享目录
+```
+
+Angular Core Domain
 ===
 
 ```
