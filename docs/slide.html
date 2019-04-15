@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Title</title>
+  <title>Clean Frontend</title>
   <meta charset="utf-8">
   <style>
     @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -12,10 +12,6 @@
     h1, h2, h3 {
       font-family: 'Yanone Kaffeesatz';
       font-weight: normal;
-    }
-    img {
-      width: auto;
-      height: 100%;
     }
     .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
   </style>
@@ -41,7 +37,7 @@ class: center, middle
 
 # 数据流
 
-![Data Flow](images/event-data-flow.gif)
+<img src="images/event-data-flow.gif" alt="Data Flow" style="height: auto;width: 50%">
 
 ---
 
@@ -66,7 +62,7 @@ class: center, middle
 
 # 架构图
 
-![Clean Architecture](images/clean-architecture.jpg)
+<img src="images/clean-architecture.jpg" alt="Data Flow" style="height: auto;width: 100%">
 
 ---
 
@@ -98,25 +94,25 @@ class: center, middle
 
 # Use case（交互器）
 
-![Use Case](images/angular-clean-usecase.png)
+<img src="images/angular-clean-usecase.png" alt="Data Flow" style="height: auto;width: 100%">
 
 ---
 
 # Android MVP + Clean Architecture
 
-![Clean Architecture 实现](images/android-mvp-clean.png)
+<img src="images/android-mvp-clean.png" alt="Data Flow" style="height: auto;width: 100%">
 
 ---
 
 # Clean Architecture 流控制
 
-![流](images/usecase-flow.png)
+<img src="images/usecase-flow.png" alt="Data Flow" style="height: auto;width: 100%">
 
 ---
 
 # 数据流
 
-![数据流](images/clean_architecture_layers_details.png)
+<img src="images/clean_architecture_layers_details.png" alt="Data Flow" style="height: auto;width: 80%">
 
 ---
 
@@ -153,20 +149,20 @@ class: center, middle
 
 # Clean Frontend
 
-![Clean MVP 组件化](images/clean-frontend-architecture.jpg)
+<img src="images/clean-frontend-components.jpg" alt="Data Flow" style="height: auto;width: 100%">
 
 ---
 
 # Angular 目录结构
 
 ```
-├── core			    // 核心代码，包含基本服务和基础代码
-├── domain				// 业务层代码，包含每个业务的单独 Clean 架构内容
-│   └── elephant		// 某一具体的业务
-├── features			// 公共页面组件
-├── protected			// 有权限的页面
-├── public				// 公共页面
-└── shared				// 共享目录
+├── core			      // 核心代码，包含基本服务和基础代码
+├── domain				  // 业务层代码，包含每个业务的单独 Clean 架构内容
+│   └── elephant		// 某一具体的业务
+├── features			  // 公共页面组件
+├── protected			  // 有权限的页面
+├── public				  // 公共页面
+└── shared				  // 共享目录
 ```
 
 ---
@@ -175,11 +171,11 @@ class: center, middle
 
 ```
 ├── model
-│   └── elephant.model.ts                         // 核心业务模型
+│   └── elephant.model.ts                         // 核心业务模型
 ├── repository
-│   ├── elephant-web-entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
-│   ├── elephant-web-repository-mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
-│   └── elephant-web.repository.ts                // Repository，用于读取和存储数据。
+│   ├── elephant-web-entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
+│   ├── elephant-web-repository-mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
+│   └── elephant-web.repository.ts                // Repository，用于读取和存储数据。
 └── usecases
     └── get-elephant-by-id-usecase.usecase.ts     // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
 ```
