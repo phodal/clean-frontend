@@ -1,6 +1,4 @@
-# Clean Frontend Architecture：整洁前端架构
-
-![Clean MVP 组件化](images/clean-frontend-architecture.jpg)
+# 整洁前端
 
 > Clean Frontend
 
@@ -202,44 +200,20 @@ Done！
 
 这个分层类似于微服务的概念，在我所熟悉的 Django 框架中也是这样的结构。也因此从理论和实践上不看，并不存在任何的问题。
 
+## 相关资料
+
+推荐书目：《整洁架构之道》
+
+相关文章：
+
+ - [Android Architecture: Part 1 – Every New Beginning is Hard](https://five.agency/android-architecture-part-1-every-new-beginning-is-hard/) 对应的中文翻译版本：[Android架构：第一部分-每个新的开始都很艰难 (译)](https://dimon94.github.io/2018/05/07/Android%E6%9E%B6%E6%9E%84%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20-%20%E6%AF%8F%E4%B8%AA%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B%E9%83%BD%E5%BE%88%E8%89%B0%E9%9A%BE%20(%E8%AF%91)/)
+ - [Thoughts on Clean Architecture and MVP](http://wahibhaq.com/blog/clean-architecture-mvp-summary/)
+ - [Approach to Clean Architecture in Angular Applications — Theory](https://medium.com/@thegiraffeclub/angular-clean-architecture-approach-fcfe32e983a5)
+ - [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
+ - [PresentationDomainDataLayering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
+
 ## 其它 
 
 > 它不是一颗银弹。使用 MVP 并不妨碍开发人员将 UI 逻辑放在 View 中，使用 Clean Architecture 不会阻止业务逻辑泄漏到表示层。
 
 我们仍然在优化相关的架构中，代码见：https://github.com/phodal/clean-angular
-
-## 相关
-
-### 相关文章
-
- - [Thoughts on Clean Architecture and MVP](http://wahibhaq.com/blog/clean-architecture-mvp-summary/)
- - [Approach to Clean Architecture in Angular Applications — Theory](https://medium.com/@thegiraffeclub/angular-clean-architecture-approach-fcfe32e983a5)
- - [Approach to Clean Architecture in Angular Applications — Hands-on](https://medium.com/intive-developers/approach-to-clean-architecture-in-angular-applications-hands-on-35145ceadc98)
- - [DDD, Hexagonal, Onion, Clean, CQRS, … How I put it all together](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)
- - [Android Architecture: Part 1 – Every New Beginning is Hard](https://five.agency/android-architecture-part-1-every-new-beginning-is-hard/) 对应的中文翻译版本：[Android架构：第一部分-每个新的开始都很艰难 (译)](https://dimon94.github.io/2018/05/07/Android%E6%9E%B6%E6%9E%84%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20-%20%E6%AF%8F%E4%B8%AA%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B%E9%83%BD%E5%BE%88%E8%89%B0%E9%9A%BE%20(%E8%AF%91)/)
- - [PresentationDomainDataLayering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
-
-### 目录结构
-
-来源： [https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where](https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where)
-
- - app/**shared** - This is the module where I keep small stuff that every other module will need. I have 3 submodules there `directives`, `components` and `pipes`, just to keep things organized a little better. Examples: `filesize.pipe`, `click-outside.directive`, `offline-status.component`...
- - app/**public** - In this module I keep public routes and top-level components. Examples: `about.component`, `contact.component`, `app-toolbar.component`
- - app/**core** - Services that app needs (and cannot work without) go here. Examples: `ui.service`, `auth.service`, `auth.guard`, `data.service`, `workers.service`....
- - app/**protected** - Similar to **public**, only for authorized users. This module has protected routes and top-level components. Examples: `user-profile.component`, `dashboard.component`, `dashboard-sidebar.component`...
- - app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
- - app/**dev** - I use this module when developing, don't ship it in production.
-
-### 相似项目
-
- - [Angular Clean Architecture](https://github.com/im-a-giraffe/angular-clean-architecture)
- - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
- - [Google Android MVP Clean](https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/)
- - [Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture) 13k stars
-
-License
----
-
-[![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
-
-@ 2019 A [Phodal Huang](https://www.phodal.com)'s [Idea](http://github.com/phodal/ideas).  This code is distributed under the MIT license. See `LICENSE` in this directory.
