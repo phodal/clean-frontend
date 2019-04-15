@@ -1,4 +1,4 @@
-# Clean Angular in Angular
+# Clean Architecture in Angular
 
 Phodal
 
