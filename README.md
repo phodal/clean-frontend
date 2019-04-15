@@ -1,6 +1,6 @@
 # Clean Frontend Architecture：整洁前端架构
 
-![Clean MVP 组件化](docs/images/clean-frontend-architecture.jpg)
+![Clean MVP 组件化](docs/images/clean-frontend-components.jpg)
 
 > Clean Frontend
 
@@ -144,7 +144,7 @@ Done！
 
 所以，最后对于我们的前端应用而言，架构如下图所示：
 
-![Clean MVP 组件化](docs/images/clean-frontend-architecture.jpg)
+![Clean MVP 组件化](docs/images/clean-frontend-components.jpg)
 
 这里，只是对于 Presenter 进行更细一步的细化，以真实的模式取代了 MVP 中的 Presenter。
 
