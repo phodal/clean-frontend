@@ -1,6 +1,6 @@
 # Clean Frontend Architecture：整洁前端架构
 
-![Clean MVP 组件化](images/clean-frontend-architecture.jpg)
+![Clean MVP 组件化](docs/images/clean-frontend-architecture.jpg)
 
 > Clean Frontend
 
@@ -53,7 +53,7 @@ Clean Architecture 是由 Robert C. Martin 在 2012 年提出的（PS：时间�
 
 为此，基于这个概念 Robert C. Martin  绘制出了整洁架构的架构图：
 
-![Clean Architecture](images/clean-architecture.jpg)
+![Clean Architecture](docs/images/clean-architecture.jpg)
 
 如图所示 Clean Architecture 一共分为四个环，四个层级。环与环之间，存在一个依赖关系原则：**源代码中的依赖关系，必须只指向同心圆的内层，即由低层机制指向高级策略**。其类似于 SOLID 中的依赖倒置原则：
 
@@ -87,7 +87,7 @@ Done！
 
 让我们来看一个较为直观的例子：
 
-![Clean Architecture 数据流](images/clean-data-flow.png)
+![Clean Architecture 数据流](docs/images/clean-data-flow.png)
 
 上图（来源，见参考文章）是一个 Android 应用的数据流示意图。
 
@@ -130,11 +130,11 @@ Done！
 
 与后端架构相比， Android 的 MVP 架构  + Clean 架构更与前端相似，为此我们再说看看它们结合的一个示例：
 
-![Android Clean Architecture](images/android-mvp-clean.png)
+![Android Clean Architecture](docs/images/android-mvp-clean.png)
 
 与上一个数据流的相比，这个数据流图更容易落地。其与传统的 MVP（Model-View-Presenter）架构相比：
 
-![MVP](images/js-mvp.png)
+![MVP](docs/images/js-mvp.png)
 
 基于 Clean Architecture 方案时，则多了一个领域层（图中的 Domain Layer，即业务层），在这一层领域层里，放置的是系统相关的用例（Usecase），而用例所包含的则是相应的业务逻辑。
 
@@ -144,7 +144,7 @@ Done！
 
 所以，最后对于我们的前端应用而言，架构如下图所示：
 
-![Clean MVP 组件化](images/clean-frontend-architecture.jpg)
+![Clean MVP 组件化](docs/images/clean-frontend-architecture.jpg)
 
 这里，只是对于 Presenter 进行更细一步的细化，以真实的模式取代了 MVP 中的 Presenter。
 
@@ -198,7 +198,7 @@ Done！
 
 我一直思考这样的模式是否有问题，直到我看到我司大佬 Martin Folwer 写下的一篇文章《[PresentationDomainDataLayering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)》——终于有人背锅了。文章中提到了这图：
 
-![分层](images/all_top.png)
+![分层](docs/images/all_top.png)
 
 这个分层类似于微服务的概念，在我所熟悉的 Django 框架中也是这样的结构。也因此从理论和实践上不看，并不存在任何的问题。
 
