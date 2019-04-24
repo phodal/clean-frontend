@@ -11,6 +11,7 @@ import {
 } from '@angular/material';
 
 import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const HOME_ROUTER_CONFIG: Routes = [
   { path: '', component: HomeComponent }

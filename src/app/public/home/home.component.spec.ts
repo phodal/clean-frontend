@@ -4,6 +4,16 @@ import { HomeComponent } from './home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import {
+  MatButtonModule, MatCheckboxModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule,
+  MatOptionModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatSidenavModule
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,7 +21,20 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, RouterTestingModule, HttpClientModule],
+      imports: [SharedModule,
+        MatButtonModule,
+        MatRadioModule,
+        MatFormFieldModule,
+        MatOptionModule,
+        MatInputModule,
+        MatSidenavModule,
+        MatSelectModule,
+        MatIconModule,
+        MatCheckboxModule,
+        RouterTestingModule,
+        HttpClientModule,
+        BrowserAnimationsModule
+      ],
       declarations: [ HomeComponent ]
     })
     .compileComponents();
