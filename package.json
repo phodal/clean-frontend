@@ -4,7 +4,7 @@
   "scripts": {
     "build-themes": "bash scripts/tools/build-themes.sh",
     "ng": "ng",
-    "start": "npm run build-themes && ng serve",
+    "start": "npm run build-themes && ng serve --port 4201",
     "build": "npm run build-themes && ng build",
     "test": "npm run build-themes && ng test",
     "lint": "ng lint",

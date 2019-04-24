@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllElephantsUsecase } from '../../domain/elephant/usecases/get-all-elephants.usecase';
-import { ElephantModel } from '../../domain/elephant/model/elephant.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { CreateContentUsecase } from '../../domain/elephant/usecases/create-content.usecase';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +8,27 @@ import { ElephantModel } from '../../domain/elephant/model/elephant.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  elephants: any[];
+  options: FormGroup;
+  private createContent: CreateContentUsecase;
 
-  constructor(private getAllElephants: GetAllElephantsUsecase) {
-  }
-
-  ngOnInit() {
-    this.elephants = [];
-    this.getAllElephants.execute(null).subscribe((value: ElephantModel) => {
-      this.elephants.push(value);
+  constructor(fb: FormBuilder, createContent: CreateContentUsecase) {
+    this.createContent = createContent;
+    this.options = fb.group({
+      hideRequired: false,
+      floatLabel: 'auto',
+      placeholder: '',
+      select: 'option'
     });
   }
 
+  ngOnInit() {
+  }
+
+  submit() {
+    this.createContent.execute(this.options.value).subscribe((success => {
+      console.log(success);
+    }), (reject) => {
+      console.log(reject);
+    });
+  }
 }
