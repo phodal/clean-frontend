@@ -1,10 +1,10 @@
 import { ContentModel } from './content.model';
 
-class Entity<T> {
+class VO<T> {
 
 }
 
-export class ContentVO extends Entity<ContentModel> {
+export class ContentVO extends VO<ContentModel> {
   floatLabel: string;
   hideRequired: boolean;
   placeholder: string;
