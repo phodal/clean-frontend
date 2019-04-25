@@ -9,6 +9,7 @@ import { CreateContentUsecase } from '../../domain/elephant/usecases/create-cont
 })
 export class HomeComponent implements OnInit {
   options: FormGroup;
+  result: string;
   private createContentUsecase: CreateContentUsecase;
 
   constructor(fb: FormBuilder, createContent: CreateContentUsecase) {
@@ -25,10 +26,13 @@ export class HomeComponent implements OnInit {
   }
 
   submit() {
+    this.result = '';
     this.createContentUsecase.execute(this.options.value).subscribe((success => {
       console.log(success);
+      this.result = JSON.stringify(success);
     }), (reject) => {
       console.log(reject);
+      this.result = JSON.stringify(reject);
     });
   }
 }
