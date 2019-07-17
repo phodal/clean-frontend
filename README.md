@@ -191,11 +191,11 @@ Done！
 
 ```
 ├── model
-│   ├── elephant-web.entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
+│   ├── elephant.entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
 │   └── elephant.model.ts                         // 核心业务模型
 ├── repository
-│   ├── elephant-web-repository.mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
-│   └── elephant-web.repository.ts                // Repository，用于读取和存储数据。
+│   ├── elephant.mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
+│   └── elephant.repository.ts                // Repository，用于读取和存储数据。
 └── usecases
     └── get-elephant-by-id-usecase.usecase.ts     // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
 ```
@@ -214,7 +214,7 @@ Done！
 
 ## 相关
 
-### 相关文章
+**相关文章**
 
  - [Thoughts on Clean Architecture and MVP](http://wahibhaq.com/blog/clean-architecture-mvp-summary/)
  - [Approach to Clean Architecture in Angular Applications — Theory](https://medium.com/@thegiraffeclub/angular-clean-architecture-approach-fcfe32e983a5)
@@ -223,7 +223,7 @@ Done！
  - [Android Architecture: Part 1 – Every New Beginning is Hard](https://five.agency/android-architecture-part-1-every-new-beginning-is-hard/) 对应的中文翻译版本：[Android架构：第一部分-每个新的开始都很艰难 (译)](https://dimon94.github.io/2018/05/07/Android%E6%9E%B6%E6%9E%84%EF%BC%9A%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%20-%20%E6%AF%8F%E4%B8%AA%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B%E9%83%BD%E5%BE%88%E8%89%B0%E9%9A%BE%20(%E8%AF%91)/)
  - [PresentationDomainDataLayering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
 
-### 目录结构
+**目录结构**
 
 来源： [https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where](https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where)
 
@@ -234,7 +234,7 @@ Done！
  - app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
  - app/**dev** - I use this module when developing, don't ship it in production.
 
-### 相似项目
+**相似项目**
 
  - [Angular Clean Architecture](https://github.com/im-a-giraffe/angular-clean-architecture)
  - [React Clean Architecture](https://github.com/eduardomoroni/react-clean-architecture)
