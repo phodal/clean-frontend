@@ -1,8 +1,12 @@
 # Clean Frontend Architecture：整洁前端架构
 
+Clean Architecture + MVP
+
 ![Clean MVP 组件化](docs/images/clean-frontend-components.jpg)
 
-> Clean Frontend
+Clean Architecture + Component-based
+
+![Clean MVP Component-based](docs/images/clean-mvp-component-based.jpg)
 
 ## 前端的恶梦
 
@@ -176,10 +180,10 @@ Done！
 ```
 ├── core			    // 核心代码，包含基本服务和基础代码
 ├── domain				// 业务层代码，包含每个业务的单独 Clean 架构内容
-│   └── elephant		// 某一具体的业务
+│   └── elephant		// 某一具体的业务
 ├── features			// 公共页面组件
-├── protected			// 有权限的页面
-├── public				// 公共页面
+├── presentation  // 有权限的页面
+├── pages 				// 公共页面
 └── shared				// 共享目录
 ```
 
@@ -187,10 +191,10 @@ Done！
 
 ```
 ├── model
+│   ├── elephant-web.entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
 │   └── elephant.model.ts                         // 核心业务模型
 ├── repository
-│   ├── elephant-web-entity.ts                    // 数据实体，简单的数据模型，用来表示核心的业务逻辑
-│   ├── elephant-web-repository-mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
+│   ├── elephant-web-repository.mapper.ts         // 映射层，用于核心实体层映射，或映射到核心实体层。
 │   └── elephant-web.repository.ts                // Repository，用于读取和存储数据。
 └── usecases
     └── get-elephant-by-id-usecase.usecase.ts     // 用例，构建在核心实体之上，并实现应用程序的整个业务逻辑。
@@ -223,12 +227,12 @@ Done！
 
 来源： [https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where](https://stackoverflow.com/questions/42779871/angular-core-feature-shared-modules-what-goes-where)
 
- - app/**shared** - This is the module where I keep small stuff that every other module will need. I have 3 submodules there `directives`, `components` and `pipes`, just to keep things organized a little better. Examples: `filesize.pipe`, `click-outside.directive`, `offline-status.component`...
- - app/**public** - In this module I keep public routes and top-level components. Examples: `about.component`, `contact.component`, `app-toolbar.component`
- - app/**core** - Services that app needs (and cannot work without) go here. Examples: `ui.service`, `auth.service`, `auth.guard`, `data.service`, `workers.service`....
- - app/**protected** - Similar to **public**, only for authorized users. This module has protected routes and top-level components. Examples: `user-profile.component`, `dashboard.component`, `dashboard-sidebar.component`...
- - app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
- - app/**dev** - I use this module when developing, don't ship it in production.
+ - app/**shared** - This is the module where I keep small stuff that every other module will need. I have 3 submodules there `directives`, `components` and `pipes`, just to keep things organized a little better. Examples: `filesize.pipe`, `click-outside.directive`, `offline-status.component`...
+ - app/**public** - In this module I keep public routes and top-level components. Examples: `about.component`, `contact.component`, `app-toolbar.component`
+ - app/**core** - Services that app needs (and cannot work without) go here. Examples: `ui.service`, `auth.service`, `auth.guard`, `data.service`, `workers.service`....
+ - app/**protected** - Similar to **public**, only for authorized users. This module has protected routes and top-level components. Examples: `user-profile.component`, `dashboard.component`, `dashboard-sidebar.component`...
+ - app/**features** - This is the module where app functionalities are. They are organized in several submodules. If you app plays music, this is where `player`, `playlist`, `favorites`submodules would go. If you look at the [`@angular/material2`](https://github.com/angular/material2/tree/master/src/lib) this would be an equivalent to their `MaterialModule` and many submodules, like `MdIconModule`, `MdSidenavModule` etc.
+ - app/**dev** - I use this module when developing, don't ship it in production.
 
 ### 相似项目
 
