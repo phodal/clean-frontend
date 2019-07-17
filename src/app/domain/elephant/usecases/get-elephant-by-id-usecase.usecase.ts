@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ElephantRepository } from '../repository/elephant-web-entity';
+import { ElephantRepository } from '../model/elephant.entity';
 import { UseCase } from '../../../core/base/use-case';
 import { ElephantModel } from '../model/elephant.model';
 

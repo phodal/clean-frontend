@@ -1,4 +1,4 @@
-import { ElephantModel } from '../model/elephant.model';
+import { ElephantModel } from './elephant.model';
 import { Observable } from 'rxjs';
 
 export abstract class ElephantRepository {
@@ -7,7 +7,7 @@ export abstract class ElephantRepository {
   abstract getAllElephants(): Observable<ElephantModel>;
 }
 
-export interface ElephantWebEntity {
+export interface ElephantEntity {
   id: number;
   name: string;
   family: string;
