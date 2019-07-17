@@ -1,10 +1,10 @@
 # Clean Frontend Architecture：整洁前端架构
 
-(Clean Architecture + MVP) with BFF
+### (Clean Architecture + MVP) with BFF
 
 ![Clean MVP 组件化](docs/images/clean-frontend-components.jpg)
 
-(Clean Architecture + Component-based + MVP) without BFF 
+### (Clean Architecture + Component-based + MVP) without BFF 
 
 ![Clean MVP Component-based](docs/images/clean-mvp-component-based.jpg)
 
