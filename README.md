@@ -86,7 +86,7 @@ Clean Architecture 是由 Robert C. Martin 在 2012 年提出的（PS：时间�
 
 ### 整洁架构
 
- Robert C. Martin 总结了六边形架构（即端口与适配器架构）、DCI （Data-Context-Interactions，数据-场景-交互）架构、BCI（Boundary Control Entity，Boundary Control Entity）架构等多种架构，归纳出了这些架构的基本特点：
+ Robert C. Martin 总结了六边形架构（即端口与适配器架构）、DCI （Data-Context-Interactions，数据-场景-交互）架构、BCI（Boundary Control Entity）架构等多种架构，归纳出了这些架构的基本特点：
 
  - 框架无关性。系统不依赖于框架中的某个函数，框架只是一个工具，**系统不能适应于框架**。
  - 可被测试。业务逻辑脱离于 UI、数据库等外部元素进行测试。
